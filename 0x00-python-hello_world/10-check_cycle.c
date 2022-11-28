@@ -12,9 +12,6 @@ int check_cycle(listint_t *list)
 {
 	listint_t *p, *tmp;
 
-	p = malloc(sizeof(listint_t));
-	if (p == NULL)
-		return (0);
 	p = list;
 	tmp = list;
 	p = p->next;
@@ -24,5 +21,6 @@ int check_cycle(listint_t *list)
 			return (1);
 		p = p->next;
 	}
+	free_listint(p);
 	return (0);
 }
