@@ -13,7 +13,12 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *tmp, *current;
 
 	if (*head == NULL)
-		return (NULL);
+	{
+		add_nodeint_end(head, number);
+/**		current->next = head->next;
+		head->next = */
+		return (*head);
+	}
 	for (i = 0, tmp = *head; tmp != NULL; tmp = tmp->next, i++)
 	{
 		if (number < tmp->n)
