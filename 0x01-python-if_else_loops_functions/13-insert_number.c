@@ -12,12 +12,10 @@ listint_t *insert_node(listint_t **head, int number)
 	int i, j;
 	listint_t *tmp, *current;
 
+	current = NULL;
 	if (*head == NULL)
 	{
-		add_nodeint_end(head, number);
-/**		current->next = head->next;
-		head->next = */
-		return (*head);
+		return(add_nodeint_end(head, number));
 	}
 	for (i = 0, tmp = *head; tmp != NULL; tmp = tmp->next, i++)
 	{
