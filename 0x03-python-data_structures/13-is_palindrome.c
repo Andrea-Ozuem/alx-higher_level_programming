@@ -13,7 +13,7 @@ int is_palindrome(listint_t **head)
 	int *arr;
 
 	if (*head == NULL)
-		return (0);
+		return (1);
 	for (i = 0, tmp = *head; tmp; tmp = tmp->next, i++)
 		;
 	arr = malloc(sizeof(int) * i);
