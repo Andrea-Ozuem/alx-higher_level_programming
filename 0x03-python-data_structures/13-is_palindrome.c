@@ -1,6 +1,6 @@
 #include "lists.h"
 #include <stdlib.h>
-#include <stdio.h>
+
 /**
   *is_palindrome - checks if a singly linked list is palindrome
   *@head: list head
@@ -16,11 +16,11 @@ int is_palindrome(listint_t **head)
 		return (0);
 	for (i = 0, tmp = *head; tmp; tmp = tmp->next, i++)
 		;
-	arr = malloc(sizeof(int) * i);	
+	arr = malloc(sizeof(int) * i);
 	for (i = 0, tmp = *head; tmp; tmp = tmp->next, i++)
 		arr[i] = tmp->n;
 
-	for(j = i - 1, tmp = *head; j >= 0 && tmp != NULL; j--, tmp = tmp->next)
+	for (j = i - 1, tmp = *head; j >= 0 && tmp != NULL; j--, tmp = tmp->next)
 	{
 		if (arr[j] != tmp->n)
 			return (0);
@@ -28,4 +28,3 @@ int is_palindrome(listint_t **head)
 	free(arr);
 	return (1);
 }
-	
