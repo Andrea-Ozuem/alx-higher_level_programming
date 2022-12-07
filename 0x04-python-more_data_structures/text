@@ -1,0 +1,26 @@
+create a dictionary
+1: I, 10 : X
+one = num / 2
+five = num / 5
+ten = num / 10
+...
+
+while thousand -= 1
+ str += dict[1000]* thousane
+ while num % 
+
+num =  dict.get(str[i])
+
+create dicionary of vals
+initialise total
+for every char in string
+		convert first to its equivslent
+		if char == first:
+			prev = num
+		if num >=next
+			add subtotal
+		else
+			minus from subtotal
+		prev = num
+	total = total + subtotal
+
