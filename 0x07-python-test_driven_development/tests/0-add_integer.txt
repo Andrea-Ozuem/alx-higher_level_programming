@@ -1,0 +1,20 @@
+The ``example`` module
+======================
+
+Using ``add_integer``
+---------------------
+
+First import function from the module
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+	>>> add_integer(NaN, 9)
+	17
+
+	>>> add_integer(8.9)
+	106
+ 
+	>>> add_integer()
+	Traceback (most recent call last):
+	TypeError: a must be an integer

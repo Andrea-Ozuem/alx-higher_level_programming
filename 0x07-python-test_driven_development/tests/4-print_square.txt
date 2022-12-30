@@ -1,0 +1,36 @@
+ The ``example module``
+ ======================
+
+ Using ``print_square``
+ ----------------------
+
+ Fist import ``print_square`` from print_square module:
+ 	>>> print_square = __import__('4-print_square').print_square
+
+Check for floating point values
+	>>> print_square(4.0)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square(4.5)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+Checks for negative values
+	>>> print_square(-2)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+Check for size passed as string e.g "5"
+	>>> print_square("2")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square("two")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+check for /n passed as size
+	>>> print_square("\n")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
