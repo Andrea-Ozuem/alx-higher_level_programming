@@ -17,10 +17,10 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         for i in range(self.__height):
-            [ret.append(Rectangle.print_symbol) for j in range(self.__width)]
+            [ret.append(self.print_symbol) for j in range(self.__width)]
             if i != self.__height - 1:
                 ret.append("\n")
-        return "".join(ret)
+        return "".join(str(sym) for sym in ret)
 
     def __repr__(self):
         """ Returns string representation of class"""
