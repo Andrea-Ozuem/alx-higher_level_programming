@@ -2,6 +2,6 @@
 """ Create C Rectangle Class"""
 
 
-class Rectangle():
+class Rectangle:
     """ Creates class"""
     pass
