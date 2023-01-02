@@ -14,10 +14,10 @@ class Rectangle:
 
     def __str__(self):
         ret = []
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return ""
-        for i in range(self.__height):
-            [ret.append(self.print_symbol) for j in range(self.__width)]
+        for i in range(self.height):
+            [ret.append(self.print_symbol) for j in range(self.width)]
             if i != self.__height - 1:
                 ret.append("\n")
         return "".join(str(sym) for sym in ret)
@@ -57,13 +57,13 @@ class Rectangle:
 
     def area(self):
         """ Returns Rectangle area"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         """ returns Rectangle perimeter"""
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return 0
-        return 2 * (self.__width + self.__height)
+        return 2 * (self.width + self.height)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
