@@ -24,14 +24,11 @@ class Rectangle:
 
     def __str__(self):
         """returns printable representaion of object"""
-        ret = []
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        for i in range(self.__height):
-            [ret.append(self.print_symbol) for j in range(self.__width)]
-            if i != self.__height - 1:
-                ret.append("\n")
-        return "".join(str(sym) for sym in ret)
+        if self.width == 0 or self.height == 0:
+            return rectangle
+        for i in range(self.height):
+            rectangle += (str(self.print_symbol) * self.width) + "\n"
+        return rectangle[:-1]
 
     def __repr__(self):
         """ Returns string representation of class"""
