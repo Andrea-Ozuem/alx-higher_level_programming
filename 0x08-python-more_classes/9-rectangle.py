@@ -3,7 +3,13 @@
 
 
 class Rectangle:
-    """ Creates class"""
+    """ Creates class
+        Attributes:
+        number_of_instances (int): The number of Rectangle instances.
+        print_symbol (any): The symbol used for string representation.
+    """
+
+
     number_of_instances = 0
     print_symbol = "#"
 
@@ -39,7 +45,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """ Width"""
+        """ Gets/sets Width of object"""
         return self.__width
 
     @width.setter
@@ -52,7 +58,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """ Return height"""
+        """ Gets/sets height of object"""
         return self.__height
 
     @height.setter
@@ -93,5 +99,8 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """returns a new Rectangle instance with width == height == size"""
+        """returns a new Rectangle instance with width == height == size
+        Args:
+        size (int): The width and height of the new Rectangle.
+        """
         return cls(size, size)
