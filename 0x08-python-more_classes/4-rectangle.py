@@ -19,6 +19,7 @@ class Rectangle:
         return "".join(ret)
 
     def __repr__(self):
+        """ Returns string representation of class"""
         return f"Rectangle({self.__width}, {self.__height})"
 
     @property
