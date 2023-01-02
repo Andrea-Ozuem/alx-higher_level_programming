@@ -44,7 +44,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """ Gets/sets Width of object"""
+        """int:  Gets/sets Width of object"""
         return self.__width
 
     @width.setter
@@ -57,7 +57,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """ Gets/sets height of object"""
+        """ int: Gets/sets height of object"""
         return self.__height
 
     @height.setter
@@ -98,8 +98,8 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """returns a new Rectangle instance with width == height == size
+        """ Returns a new Rectangle instance with width == height == size
         Args:
         size (int): The width and height of the new Rectangle.
         """
-        return cls(size, size)
+        return Rectangle(size, size)
