@@ -11,6 +11,7 @@ class Rectangle:
     @property
     def width(self):
         return self.__width
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -22,6 +23,8 @@ class Rectangle:
     @property
     def height(self):
         return self.__height
+
+    @height.setter
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
