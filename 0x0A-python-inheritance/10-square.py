@@ -5,7 +5,7 @@
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-class Rectangle(BaseGeometry):
+class Square(Rectangle):
     """Creates Rectangle subclass"""
     def __init__(self, size):
         self.integer_validator("size", width)
