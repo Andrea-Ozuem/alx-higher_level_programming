@@ -15,6 +15,7 @@ class Rectangle(Base):
     @property
     def width(self):
         return self.__width
+
     @width.setter
     def width(self, width):
         if type(width) is not int:
@@ -26,6 +27,7 @@ class Rectangle(Base):
     @property
     def height(self):
         return self.__height
+
     @height.setter
     def height(self, height):
         if type(height) is not int:
@@ -37,6 +39,7 @@ class Rectangle(Base):
     @property
     def x(self):
         return self.__x
+
     @x.setter
     def x(self, x):
         if type(x) is not int:
@@ -48,6 +51,7 @@ class Rectangle(Base):
     @property
     def y(self):
         return self.__y
+
     @y.setter
     def y(self, y):
         if type(y) is not int:
@@ -56,6 +60,40 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = y
 
+    def __str__(self):
+        return "[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".format(self.id,
+                                                               self.x,
+                                                               self.y,
+                                                               self.width,
+                                                               self.height)
+
     def area(self):
         """Return area of Rectancle"""
         return self.width * self.height
+
+    def display(self):
+        """Displays rectangle using width and height"""
+        for k in range(self.y):
+            print()
+        for i in range(self.height):
+            print(" " * self.x, end="")
+            print("#" * self.width, end="")
+            print()
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
+        att = ["id", "width", "height", "x", "y"]
+        if args and len(args):
+            i = 0
+            for arg in args:
+                setattr(self, att[i], arg)
+                i += 1
+        else:
+            for k, v in kwargs.items():
+                if k in att:
+                    setattr(self, k, v)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height,
+                'width': self.width}
