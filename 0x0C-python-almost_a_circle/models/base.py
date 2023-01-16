@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import json
+from os import path
 
 """Base Classs"""
 
@@ -22,7 +23,7 @@ class Base:
         if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
@@ -44,4 +45,20 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
-        
+        if cls.__name__ == "Rectangle":
+            temp = cls(1, 1)
+        elif cls.__name__ == "Square":
+            temp = cls(1)
+        temp.update(**dictionary)
+        return temp
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        if not path.exists(cls.__name__ + ".json"):
+            return []
+        with open(cls.__name__ + ".json", mode="r", encoding="utf-8") as f:
+            js_str = f.read()
+            ls_dic = cls.from_json_string(js_str)
+            ls_instance = [cls.create(**att) for att in ls_dic]
+            return ls_instance
