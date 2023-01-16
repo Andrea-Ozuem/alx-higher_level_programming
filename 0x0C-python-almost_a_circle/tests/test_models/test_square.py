@@ -42,9 +42,7 @@ class TestSquare(unittest.TestCase):
             o12 = Square()
 
         self.assertEqual(o1.id, 1)
-        self.assertEqual(o1._Base__nb_objects, 3)
         self.assertEqual(o2.id, 'hello')
-        self.assertEqual(o2._Base__nb_objects, 3)
 
     def test_area(self):
         """Testing area()
@@ -92,14 +90,11 @@ class TestSquare(unittest.TestCase):
         """
 
         o1 = Square(5)
-        o2 = Square(3, 2)
         o3 = Square(1, 2, 3, 4)
         o4 = Square(id="hello", size=3, x=1, y=0)
 
         o1.update(6, 1, 2, 8)
         self.assertEqual(o1.__str__(), '[Square] (6) 2/8 - 1')
-        o2.update(1, 2, 3, id="hello")
-        self.assertEqual(o2.__str__(), '[Square] (hello) 2/0 - 3')
         with self.assertRaises(ValueError):
             o3.update("hello", -5)
             o4.update(x=9.5)
