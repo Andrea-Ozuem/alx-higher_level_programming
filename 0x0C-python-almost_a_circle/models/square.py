@@ -30,6 +30,7 @@ class Square(Rectangle):
         """Update the Square.
         Args:
             *args (ints): New attribute values.
+            **kwargs (dict): New key/value pairs of attributes
         """
         att = ["id", "size", "x", "y"]
         if len(args) != 0:
@@ -47,3 +48,8 @@ class Square(Rectangle):
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle"""
         return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
+
+    def __str__(self):
+        """Return the print() and str() representation of a Square."""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.width)
