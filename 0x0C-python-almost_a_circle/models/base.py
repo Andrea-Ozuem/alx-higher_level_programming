@@ -1,9 +1,10 @@
 #!/usr/bin/python
 
+"""Base Classs"""
+
+
 import json
 from os import path
-
-"""Base Classs"""
 
 
 class Base:
@@ -11,6 +12,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Initialise new base"""
         if id:
             self.id = id
         else:

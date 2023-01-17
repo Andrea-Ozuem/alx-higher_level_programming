@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-from models.base import Base
 """Rectangle Class"""
+
+
+from base import Base
 
 
 class Rectangle(Base):
     """Rectangel Class specifiction"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initialise a new Base"""
         self.width = width
         self.height = height
         self.x = x
@@ -14,6 +17,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Set width of rectangle"""
         return self.__width
 
     @width.setter
@@ -26,6 +30,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Sets heights of rectangle"""
         return self.__height
 
     @height.setter
@@ -38,6 +43,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Sets x- pffset"""
         return self.__x
 
     @x.setter
@@ -50,6 +56,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Sets y-offset"""
         return self.__y
 
     @y.setter
@@ -61,6 +68,7 @@ class Rectangle(Base):
         self.__y = y
 
     def __str__(self):
+        """Str representation of object"""
         return "[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".format(self.id,
                                                                self.x,
                                                                self.y,
