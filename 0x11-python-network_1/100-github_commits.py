@@ -13,7 +13,7 @@ if __name__ == "__main__":
     try:
         res = res.json()
         for i in range(10):
-            print('{}: {}'.format(res[i].get('sha'), res[i]['commit']['author']
+            print('{}: {}'.format(res[i].get('sha'), res[i].get('commit').get('author')
                   .get('name')))
     except ValueError:
         pass
