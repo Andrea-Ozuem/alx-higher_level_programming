@@ -13,5 +13,5 @@ if __name__ == "__main__":
         for i in range(10):
             print('{}: {}'.format(res[i].get('sha'), res[i].get('commit')
                   .get('author').get('name')))
-    except ValueError:
+    except IndexError:
         pass
