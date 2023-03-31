@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-'''displays the body of the response'''
+'''sends a request to the URL displays the body of the response'''
 
 if __name__ == "__main__":
-    import urllib.request
+    from urllib import request, error
     import sys
 
-    req = urllib.request.Request(sys.argv[1])
     try:
-        with urllib.request.urlopen(req) as res:
+        with urllib.request.urlopen(sys.argv[1]) as res:
             content = res.read().decode('utf-8')
             print(content)
-    except urllib.error.HTTPError as err:
+    except error.HTTPError as err:
         print('Error code: {}'.format(err.code))
