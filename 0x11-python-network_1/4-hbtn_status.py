@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''fetches url using requests'''
 import requests
 
 
