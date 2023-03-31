@@ -12,6 +12,4 @@ if __name__ == "__main__":
             content = res.read().decode('utf-8')
             print(content)
     except HTTPError as e:
-        print('Error code: ', e.code)
-    except URLError:
-        pass
+        print('Error code: {}'.format(e.code))
