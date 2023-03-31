@@ -6,5 +6,5 @@ import sys
 
 if __name__ == "__main__":
     content = requests.get(sys.argv[1])
-    content = content.headers['X-Request-Id']
-    print(content)
+    content = content.headers
+    print(content.get('X-Request-Id'))
