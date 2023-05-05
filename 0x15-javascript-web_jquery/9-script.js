@@ -1,6 +1,6 @@
 $(document).ready(function(){
  $.ajax({
-    url: 'https://fourtonfish.com/hellosalut/?lang=fr',
+    url: 'https://hellosalut.stefanbohacek.dev/?lang=fr',
     success: function (data) {
       $('DIV#hello').text(data.hello);
     }
